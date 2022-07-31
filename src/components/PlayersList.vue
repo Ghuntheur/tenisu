@@ -1,5 +1,5 @@
 <template>
-  <div class="players-list-container">
+  <div class="players-list-container" v-auto-animate>
     <players-list-item
       v-for="player in data"
       :key="player.id"
@@ -32,5 +32,8 @@ const handleClick = (player: IPlayer) => {
 
 <style lang="scss" scoped>
 .players-list-container {
+  display: grid;
+  gap: var(--spacing-l);
+  grid-template-columns: 1fr;
 }
 </style>

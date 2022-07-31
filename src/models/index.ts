@@ -5,7 +5,8 @@ export enum Results {
 
 export type Gender = 'M' | 'F'
 export type CountryCode = 'SRB' | 'USA' | 'SUI' | 'ESP'
-export type IPlayerLastResults = [Results, Results, Results, Results, Results]
+export type PlayerLastResults = [Results, Results, Results, Results, Results]
+export type PlayerTitles = Record<string, string[]>
 
 export interface ICountry {
   picture: string
@@ -17,8 +18,10 @@ export interface IPlayerData {
   points: number
   weight: number
   height: number
+  birthday: string
   age: number
-  last: IPlayerLastResults
+  titles: PlayerTitles
+  last: PlayerLastResults
 }
 
 export interface IPlayer {

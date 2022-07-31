@@ -1,29 +1,38 @@
 <template>
   <div class="main-page">
-    <section class="main-content">
-      <search-input class="input" v-model="searchValue" />
+    <main>
+      <section class="main-content">
+        <search-input class="input" v-model="searchValue" />
 
-      <players-list
-        :data="filteredPlayers"
-        @on-player-click="handlePlayerClick"
-      />
-    </section>
+        <players-list
+          :data="filteredPlayers"
+          @on-player-click="handlePlayerClick"
+        />
+      </section>
+    </main>
+
+    <drawer ref="drawer" @on-close="handleClose">
+      <player-details v-if="selectedPlayer" :player="selectedPlayer" />
+    </drawer>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 import SearchInput from '@/components/SearchInput.vue'
 import PlayersList from '@/components/PlayersList.vue'
+import Drawer from '@/components/Drawer.vue'
+import PlayerDetails from '@/components/PlayerDetails.vue'
 
 import { IPlayer } from '@/models'
 
 import { players } from '@/mocks/data.json'
-import { computed } from '@vue/reactivity'
 
 const searchValue = ref('')
 const allPlayers = ref<IPlayer[]>(players as IPlayer[])
+const selectedPlayer = ref<IPlayer | null>()
+const drawer = ref<InstanceType<typeof Drawer> | null>(null)
 
 const filteredPlayers = computed(() =>
   searchValue.value
@@ -38,7 +47,12 @@ const filteredPlayers = computed(() =>
 )
 
 const handlePlayerClick = (player: IPlayer) => {
-  console.log(player)
+  selectedPlayer.value = player
+  drawer.value?.open()
+}
+
+const handleClose = () => {
+  selectedPlayer.value = null
 }
 </script>
 
@@ -51,15 +65,46 @@ const handlePlayerClick = (player: IPlayer) => {
     var(--color-primary) 100%
   );
   background-attachment: fixed;
+  z-index: 2;
 
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-xxl);
-    width: 40%;
+  &::after {
+    content: '';
+    background-image: url('@/assets/ball-and-shadows.png');
+    position: fixed;
+    bottom: -4px;
+    right: -4px;
+    height: 46vw;
+    width: 46vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
 
-    > .input {
-      margin-bottom: var(--spacing-l);
+    @include tablet {
+      height: 60vh;
+      width: 60vh;
+    }
+  }
+
+  main {
+    position: relative;
+    .main-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: var(--spacing-xxl) var(--spacing-3xl);
+      width: 44%;
+      min-width: 700px;
+      z-index: 2;
+
+      @include tablet {
+        width: 100%;
+        min-width: initial;
+        padding: var(--spacing-l);
+      }
+
+      > .input {
+        margin-bottom: var(--spacing-xl);
+      }
     }
   }
 }

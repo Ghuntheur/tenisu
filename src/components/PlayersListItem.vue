@@ -5,32 +5,21 @@
     </section>
 
     <section class="data-container">
-      <h2 class="player-name">{{ playerName }}</h2>
+      <Title tag="h4" class="player-name">{{ playerName }}</Title>
 
-      <div class="stats-container">
-        <labelled-text label="Rank" :value="`#${playerData.rank}`" />
-        <labelled-text
-          label="Points"
-          :value="separateNumbers(playerData.points)"
-        />
-        <labelled-text
-          label="Country"
-          :value="COUNTRY_NAMES[player.country.code]"
-        />
-      </div>
+      <player-stats-resume :player="player" />
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 
-import LabelledText from './LabelledText.vue'
+import Title from './Title.vue'
 
-import { IPlayer, IPlayerData } from '@/models'
-import { COUNTRY_NAMES } from '@/constants'
+import { IPlayer } from '@/models'
 
-import { separateNumbers } from '@/helpers'
+import PlayerStatsResume from './PlayerStatsResume.vue'
 
 interface IProps {
   player: IPlayer
@@ -38,7 +27,6 @@ interface IProps {
 
 const props = defineProps<IProps>()
 
-const playerData = ref<IPlayerData>(props.player.data)
 const playerName = computed(
   () => `${props.player.firstname} ${props.player.lastname}`
 )
@@ -49,16 +37,11 @@ const playerName = computed(
   display: flex;
   align-items: center;
   background: var(--color-light);
-  padding: var(--spacing-l);
+  padding: var(--spacing-l) var(--spacing-xl) var(--spacing-l) 0;
   box-shadow: 0 0 12px -4px var(--color-dark);
   cursor: pointer;
 
-  + .players-list-item-container {
-    margin-top: var(--spacing-l);
-  }
-
   .picture-container {
-    // height: spacing(30);
     width: 25%;
     overflow: hidden;
 
@@ -77,13 +60,6 @@ const playerName = computed(
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       color: var(--color-primary);
-      font-size: var(--font-size-h4);
-    }
-
-    .stats-container {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
     }
   }
 }

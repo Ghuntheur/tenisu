@@ -34,9 +34,16 @@ const handleChange = (ev: Event) => {
   border-radius: 8px;
   color: var(--color-secondary);
   outline: none;
+  color: var(--color-secondary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h5);
 
   &::placeholder {
     color: var(--color-secondary);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-h5);
   }
 }
 </style>

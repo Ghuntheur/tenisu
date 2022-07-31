@@ -1,14 +1,19 @@
 <template>
   <div class="labelled-text-container">
-    <h5 class="label">{{ label }}</h5>
-    <p class="value">{{ value }}</p>
+    <Title tag="h6" class="label" font="secondary">{{ label }}</Title>
+
+    <slot>
+      <p v-if="value" class="value">{{ value }}</p>
+    </slot>
   </div>
 </template>
 
 <script setup lang="ts">
+import Title from './Title.vue'
+
 interface IProps {
   label: string
-  value: string | number
+  value?: string | number
 }
 
 defineProps<IProps>()
@@ -20,19 +25,17 @@ defineProps<IProps>()
   flex-direction: column;
 
   .label {
-    font-family: var(--font-secondary);
-    font-weight: 700;
     color: var(--color-dark);
     text-transform: uppercase;
-    letter-spacing: 2px;
     margin-bottom: var(--spacing-s);
     margin-top: var(--spacing-l);
+    letter-spacing: 2px;
   }
 
   .value {
     font-family: var(--font-primary);
-    font-weight: var(--font-weight-bold);
     color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
     letter-spacing: 1px;
   }
 }

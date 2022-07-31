@@ -16,7 +16,24 @@
         "points": 2542,
         "weight": 80000,
         "height": 188,
+        "birthday": "22-05-1987",
         "age": 31,
+        "titles": {
+          "2021": [
+            "ATP Masters 1000 Paris (Indoor/Hard)",
+            "Wimbledon (Outdoor/Grass)",
+            "Roland Garros (Outdoor/Clay)",
+            "Belgrade 2 (Outdoor/Clay)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2020": [
+            "ATP Masters 1000 Rome (Outdoor/Clay)",
+            "ATP Masters 1000 Cincinnati (Outdoor/Hard)",
+            "Dubai (Outdoor/Hard)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2019": ["ATP Master 100 Rome (Clay)"]
+        },
         "last": [1, 1, 1, 1, 1]
       }
     },
@@ -27,7 +44,7 @@
       "shortname": "V.WIL",
       "sex": "F",
       "country": {
-        "picture": "https://data.latelier.co/training/tennis_stats/resources/USA.png",
+        "picture": "https://data.latelier.co/training/tennis_stats/resources/USA.webp",
         "code": "USA"
       },
       "picture": "https://data.latelier.co/training/tennis_stats/resources/Venus.webp",
@@ -36,7 +53,24 @@
         "points": 1105,
         "weight": 74000,
         "height": 185,
+        "birthday": "17-06-1980",
         "age": 38,
+        "titles": {
+          "2021": [
+            "ATP Masters 1000 Paris (Indoor/Hard)",
+            "Wimbledon (Outdoor/Grass)",
+            "Roland Garros (Outdoor/Clay)",
+            "Belgrade 2 (Outdoor/Clay)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2020": [
+            "ATP Masters 1000 Rome (Outdoor/Clay)",
+            "ATP Masters 1000 Cincinnati (Outdoor/Hard)",
+            "Dubai (Outdoor/Hard)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2019": ["ATP Master 100 Rome (Clay)"]
+        },
         "last": [0, 1, 0, 0, 1]
       }
     },
@@ -56,7 +90,24 @@
         "points": 1784,
         "weight": 81000,
         "height": 183,
+        "birthday": "18-03-1985",
         "age": 33,
+        "titles": {
+          "2021": [
+            "ATP Masters 1000 Paris (Indoor/Hard)",
+            "Wimbledon (Outdoor/Grass)",
+            "Roland Garros (Outdoor/Clay)",
+            "Belgrade 2 (Outdoor/Clay)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2020": [
+            "ATP Masters 1000 Rome (Outdoor/Clay)",
+            "ATP Masters 1000 Cincinnati (Outdoor/Hard)",
+            "Dubai (Outdoor/Hard)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2019": ["ATP Master 100 Rome (Clay)"]
+        },
         "last": [1, 1, 1, 0, 1]
       }
     },
@@ -67,7 +118,7 @@
       "shortname": "S.WIL",
       "sex": "F",
       "country": {
-        "picture": "https://data.latelier.co/training/tennis_stats/resources/USA.png",
+        "picture": "https://data.latelier.co/training/tennis_stats/resources/USA.webp",
         "code": "USA"
       },
       "picture": "https://data.latelier.co/training/tennis_stats/resources/Serena.png",
@@ -76,7 +127,24 @@
         "points": 3521,
         "weight": 72000,
         "height": 175,
+        "birthday": "26-09-1981",
         "age": 37,
+        "titles": {
+          "2021": [
+            "ATP Masters 1000 Paris (Indoor/Hard)",
+            "Wimbledon (Outdoor/Grass)",
+            "Roland Garros (Outdoor/Clay)",
+            "Belgrade 2 (Outdoor/Clay)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2020": [
+            "ATP Masters 1000 Rome (Outdoor/Clay)",
+            "ATP Masters 1000 Cincinnati (Outdoor/Hard)",
+            "Dubai (Outdoor/Hard)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2019": ["ATP Master 100 Rome (Clay)"]
+        },
         "last": [0, 1, 1, 1, 0]
       }
     },
@@ -96,7 +164,24 @@
         "points": 1982,
         "weight": 85000,
         "height": 185,
+        "birthday": "03-06-1986",
         "age": 33,
+        "titles": {
+          "2021": [
+            "ATP Masters 1000 Paris (Indoor/Hard)",
+            "Wimbledon (Outdoor/Grass)",
+            "Roland Garros (Outdoor/Clay)",
+            "Belgrade 2 (Outdoor/Clay)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2020": [
+            "ATP Masters 1000 Rome (Outdoor/Clay)",
+            "ATP Masters 1000 Cincinnati (Outdoor/Hard)",
+            "Dubai (Outdoor/Hard)",
+            "Australian Open (Outdoor/Hard)"
+          ],
+          "2019": ["ATP Master 100 Rome (Clay)"]
+        },
         "last": [1, 0, 0, 0, 1]
       }
     }
