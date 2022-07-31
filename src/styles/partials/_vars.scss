@@ -1,0 +1,31 @@
+:root {
+  --color-primary: #f2753b;
+  --color-secondary: #ebad65;
+  --color-light: rgb(246, 246, 246);
+  --color-dark: rgba(0, 0, 0, 0.3);
+
+  --spacing-0: 0;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 32px;
+  --spacing-xl: 64px;
+  --spacing-xxl: 80px;
+
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Mulish', sans-serif;
+
+  --font-size-h1: calc(1.5rem + 1vw);
+  --font-size-h2: calc(1.3rem + 0.6vw);
+  --font-size-h3: calc(1.1rem + 0.3vw);
+  --font-size-h4: calc(1.05rem + 0.3vw);
+  --font-size-h5: 1.1rem;
+  --font-size-h6: 1rem;
+  --font-size-labor: 0.86rem;
+
+  --font-weight-normal: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-h1: 10rem;
+}
