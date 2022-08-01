@@ -30,7 +30,7 @@ import { IPlayer } from '@/models'
 import { players } from '@/mocks/data.json'
 
 const searchValue = ref('')
-const allPlayers = ref<IPlayer[]>(players as IPlayer[])
+const allPlayers = ref<IPlayer[]>(players as unknown as IPlayer[])
 const selectedPlayer = ref<IPlayer | null>()
 const drawer = ref<InstanceType<typeof Drawer> | null>(null)
 
