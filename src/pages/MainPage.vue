@@ -18,12 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 import SearchInput from '@/components/SearchInput.vue'
 import PlayersList from '@/components/PlayersList.vue'
 import Drawer from '@/components/Drawer.vue'
 import PlayerDetails from '@/components/PlayerDetails.vue'
+
+import { useScroll } from '@/hooks/useScroll'
 
 import { IPlayer } from '@/models'
 
@@ -33,6 +35,9 @@ const searchValue = ref('')
 const allPlayers = ref<IPlayer[]>(players as unknown as IPlayer[])
 const selectedPlayer = ref<IPlayer | null>()
 const drawer = ref<InstanceType<typeof Drawer> | null>(null)
+
+const { scrollPosition } = useScroll()
+const rotation = computed(() => `${(scrollPosition.value / 360) * 100}deg`)
 
 const filteredPlayers = computed(() =>
   searchValue.value
@@ -71,13 +76,14 @@ const handleClose = () => {
     content: '';
     background-image: url('@/assets/ball-and-shadows.png');
     position: fixed;
-    bottom: -4px;
-    right: -4px;
+    bottom: -20px;
+    right: -20px;
     height: 46vw;
     width: 46vw;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
+    transform: rotate(calc(v-bind(rotation) * -0.14));
 
     @include tablet {
       height: 60vh;
