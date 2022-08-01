@@ -22,6 +22,7 @@
 
   @include mobile {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
     gap: 0;
     margin-top: var(--spacing-s) !important;
   }

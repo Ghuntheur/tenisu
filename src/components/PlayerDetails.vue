@@ -184,6 +184,7 @@ const age = ref(dayjs().diff(birthday.value, 'y'))
       @include mobile {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-s);
         margin-right: 0;
       }
     }

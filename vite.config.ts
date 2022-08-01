@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
@@ -19,5 +21,9 @@ export default defineConfig({
   },
   server: {
     port: 3000
+  },
+  test: {
+    globals: true,
+    environment: 'happy-dom'
   }
 })
