@@ -85,10 +85,10 @@ const age = ref(dayjs().diff(birthday.value, 'y'))
   background: var(--color-light);
   padding: var(--spacing-xxl);
   padding-left: calc(var(--spacing-3xl) * 2);
-  overflow-y: auto;
 
   @include tablet {
     padding: var(--spacing-l);
+    overflow-y: auto;
   }
 
   .picture-container {
