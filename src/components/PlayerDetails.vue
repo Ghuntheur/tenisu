@@ -1,6 +1,15 @@
 <template>
   <div class="player-details-container">
-    <img :src="player.picture" :alt="player.lastname" class="player-picture" />
+    <div
+      class="picture-container"
+      :class="player.shortname.replace(/\./g, '').toLowerCase()"
+    >
+      <img
+        :src="player.picture"
+        :alt="player.lastname"
+        class="player-picture"
+      />
+    </div>
 
     <div class="header">
       <div class="player-name">
@@ -72,22 +81,53 @@ const age = ref(dayjs().diff(birthday.value, 'y'))
 <style lang="scss" scoped>
 .player-details-container {
   position: relative;
-  height: 100%;
+  height: 90%;
   background: var(--color-light);
   padding: var(--spacing-xxl);
-  padding-left: calc(var(--spacing-xxl) * 3);
+  padding-left: calc(var(--spacing-3xl) * 2);
+  overflow-y: auto;
 
-  .player-picture {
+  @include tablet {
+    padding: var(--spacing-l);
+  }
+
+  .picture-container {
     position: absolute;
-    height: 90%;
+    height: 100%;
     left: 0;
     bottom: 0;
-    transform: translateX(-30%);
+    z-index: 2;
+    transform: translateX(-27%);
+
+    &.vwil {
+      transform: translateX(-47%);
+    }
+
+    @include tablet {
+      height: 68%;
+      position: fixed;
+      left: 60%;
+      transform: translateX(0);
+      max-width: 280px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      filter: drop-shadow(2px 0 8px rgba(0, 0, 0, 0.6));
+    }
   }
 
   .header {
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
 
     .player-name {
       display: flex;
@@ -103,17 +143,48 @@ const age = ref(dayjs().diff(birthday.value, 'y'))
     }
 
     .country-container {
-      width: 160px;
+      width: 10%;
+      min-width: 80px;
+
+      @include mobile {
+        align-self: flex-end;
+        margin-bottom: var(--spacing-s);
+      }
 
       img {
         width: 100%;
-        box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.15);
       }
 
       .code {
         margin-top: var(--spacing-m);
         font-weight: var(--font-weight-normal);
         letter-spacing: var(--spacing-m);
+        font-size: clamp(var(--font-size-labor), 1.4vw, var(--font-size-h4));
+      }
+    }
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-left: calc(1.5 * var(--spacing-3xl));
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    @include small-desktop {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .values-container {
+      margin-right: var(--spacing-xl);
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-right: 0;
       }
     }
   }

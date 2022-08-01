@@ -30,6 +30,10 @@ defineProps<IProps>()
     margin-bottom: var(--spacing-s);
     margin-top: var(--spacing-l);
     letter-spacing: 2px;
+
+    @include mobile {
+      margin-top: var(--spacing-m);
+    }
   }
 
   .value {

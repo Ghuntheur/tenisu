@@ -9,7 +9,7 @@
         </slot>
 
         <div class="content-container">
-          <slot>sdsd</slot>
+          <slot />
         </div>
       </div>
     </Transition>
@@ -57,10 +57,12 @@ defineExpose({
 
 <style lang="scss" scoped>
 .main-content {
+  display: grid;
+  grid-template-rows: auto 1fr;
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 99;
@@ -79,18 +81,25 @@ defineExpose({
     display: flex;
     justify-content: center;
     cursor: pointer;
-    margin: var(--spacing-l) 0;
+    padding: var(--spacing-l) 0;
 
     img {
       width: var(--spacing-l);
       filter: invert(100%);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 
   .content-container {
-    min-height: 100%;
-    overflow: scroll;
     padding: 0 var(--spacing-3xl);
+
+    @include tablet {
+      padding: 0;
+    }
   }
 }
 </style>

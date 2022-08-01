@@ -45,12 +45,27 @@ const playerName = computed(
   box-shadow: 0 0 12px -4px var(--color-dark);
   cursor: pointer;
 
+  @include mobile {
+    padding: var(--spacing-l);
+  }
+
   .picture-container {
     width: var(--picture-size);
     height: 150px;
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
+
+    @include mobile {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 200px;
+
+      img {
+        object-position: 0px top !important;
+      }
+    }
 
     img {
       height: 100%;
@@ -62,6 +77,10 @@ const playerName = computed(
 
   .data-container {
     width: calc(100% - var(--picture-size));
+
+    @include mobile {
+      width: 100%;
+    }
 
     .player-name {
       margin-bottom: var(--spacing-s);

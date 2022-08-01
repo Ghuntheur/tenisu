@@ -15,5 +15,15 @@
   + .stats-row-container {
     margin-top: var(--spacing-l);
   }
+
+  @include tablet {
+    margin-top: var(--spacing-s);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: var(--spacing-s) !important;
+  }
 }
 </style>

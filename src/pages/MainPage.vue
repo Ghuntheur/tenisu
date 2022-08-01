@@ -58,7 +58,7 @@ const handleClose = () => {
 
 <style lang="scss" scoped>
 .main-page {
-  min-height: 100%;
+  min-height: 100vh;
   background: linear-gradient(
     0deg,
     var(--color-secondary) 0%,
@@ -100,6 +100,10 @@ const handleClose = () => {
         width: 100%;
         min-width: initial;
         padding: var(--spacing-l);
+      }
+
+      @include mobile {
+        padding: var(--spacing-l) var(--spacing-s);
       }
 
       > .input {
